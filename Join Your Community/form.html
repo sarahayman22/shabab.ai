@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="formDocTitle">Join Shabab.ai Community</title>
+    <link rel="stylesheet" href="form.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="form-container">
+        <header class="form-header">
+            <a href="../index.html" class="back-link" data-lang="formBackLink"><i class="fas fa-arrow-left"></i> Back to Home</a>
+            <h1 data-lang="formTitle">Join the Shabab.ai Community</h1>
+            <p class="subtitle" data-lang="formSubtitle">Fill out the form below to start your journey with us. We're excited to learn more about you!</p>
+        </header>
+        <form id="join-form" novalidate>
+            <fieldset>
+                <legend data-lang="formSection1Title">Personal Information</legend>
+                <div class="form-group">
+                    <label for="fullName" data-lang="formFullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" data-lang="formEmail">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" data-lang="formPhone">Phone Number (Optional)</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend data-lang="formSection2Title">Professional & Academic Background</legend>
+                <div class="form-group">
+                    <label for="education" data-lang="formEducation">Highest Level of Education</label>
+                    <select id="education" name="education" required>
+                        <option value="" data-lang="formSelectOption">Please select...</option>
+                        <option value="high-school" data-lang="formEduHighSchool">High School</option>
+                        <option value="bachelors" data-lang="formEduBachelors">Bachelor's Degree</option>
+                        <option value="masters" data-lang="formEduMasters">Master's Degree</option>
+                        <option value="phd" data-lang="formEduPhD">PhD</option>
+                        <option value="other" data-lang="formEduOther">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fieldOfStudy" data-lang="formFieldOfStudy">Field of Study / Interest</label>
+                    <input type="text" id="fieldOfStudy" name="fieldOfStudy" required>
+                </div>
+                <div class="form-group">
+                    <label for="cv" data-lang="formCV">Upload Your CV (PDF, DOC, DOCX)</label>
+                    <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend data-lang="formSection3Title">Your Interests</legend>
+                <div class="form-group">
+                    <label data-lang="formInterestPrompt">What are you hoping to gain from Shabab.ai? (Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="goals" value="mentorship"> <span data-lang="formGoalMentorship">Mentorship</span></label>
+                        <label><input type="checkbox" name="goals" value="networking"> <span data-lang="formGoalNetworking">Networking</span></label>
+                        <label><input type="checkbox" name="goals" value="skills"> <span data-lang="formGoalSkills">Building Skills</span></label>
+                        <label><input type="checkbox" name="goals" value="jobs"> <span data-lang="formGoalJobs">Job Opportunities</span></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="projectIdea" data-lang="formProjectIdea">Do you have an idea for a project you'd like to work on? Tell us about it.</label>
+                    <textarea id="projectIdea" name="projectIdea" rows="4"></textarea>
+                </div>
+            </fieldset>
+            <button type="submit" class="submit-btn" data-lang="formSubmitBtn">Submit Application</button>
+        </form>
+    </div>
+    <script src="form.js"></script>
+</body>
+</html>

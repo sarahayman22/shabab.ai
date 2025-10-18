@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="learningDocTitle">Start Your Learning Journey - Shabab.ai</title>
+    <link rel="stylesheet" href="learning.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="form-container">
+        <header class="form-header">
+            <a href="../index.html" class="back-link" data-lang="formBackLink"><i class="fas fa-arrow-left"></i> Back to Home</a>
+            <h1 data-lang="learningTitle">Start Your Learning Journey</h1>
+            <p class="subtitle" data-lang="learningSubtitle">Your feedback is vital. Help us understand what you want to learn and how we can best support you.</p>
+        </header>
+        <form id="learning-survey-form" novalidate>
+            <fieldset>
+                <legend data-lang="learningSection1Title">Learning Interests</legend>
+                <div class="form-group">
+                    <label data-lang="learningInterestPrompt">Which topics are you most interested in learning about? (Check all that apply)</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="interests" value="ai-ml"> <span data-lang="learningTopicAI">AI & Machine Learning</span></label>
+                        <label><input type="checkbox" name="interests" value="coding"> <span data-lang="learningTopicCoding">Web & App Development</span></label>
+                        <label><input type="checkbox" name="interests" value="design"> <span data-lang="learningTopicDesign">UI/UX & Graphic Design</span></label>
+                        <label><input type="checkbox" name="interests" value="marketing"> <span data-lang="learningTopicMarketing">Digital Marketing & SEO</span></label>
+                        <label><input type="checkbox" name="interests" value="entrepreneurship"> <span data-lang="learningTopicBusiness">Entrepreneurship & Startups</span></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="otherInterests" data-lang="learningOtherInterests">Are there any other topics you're passionate about?</label>
+                    <input type="text" id="otherInterests" name="otherInterests" data-lang-placeholder="learningOtherPlaceholder">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend data-lang="learningSection2Title">Your Challenges & Needs</legend>
+                <div class="form-group">
+                    <label for="challenges" data-lang="learningChallenges">What are the biggest challenges you face when trying to learn new skills?</label>
+                    <textarea id="challenges" name="challenges" rows="4" data-lang-placeholder="learningChallengesPlaceholder"></textarea>
+                </div>
+                <div class="form-group">
+                    <label data-lang="learningSupport">What kind of support would be most helpful for you?</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="support" value="mentorship"> <span data-lang="learningSupportMentorship">One-on-one mentorship</span></label>
+                        <label><input type="checkbox" name="support" value="courses"> <span data-lang="learningSupportCourses">Structured online courses</span></label>
+                        <label><input type="checkbox" name="support" value="workshops"> <span data-lang="learningSupportWorkshops">Live workshops & webinars</span></label>
+                        <label><input type="checkbox" name="support" value="community"> <span data-lang="learningSupportCommunity">A community to learn with</span></label>
+                    </div>
+                </div>
+            </fieldset>
+            <button type="submit" class="submit-btn" data-lang="learningSubmitBtn">Submit My Feedback</button>
+        </form>
+    </div>
+    <script src="learning.js"></script>
+</body>
+</html>

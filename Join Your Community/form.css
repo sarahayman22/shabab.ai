@@ -1,0 +1,164 @@
+/* --- Global Styles for Form Page --- */
+:root {
+    --bg-dark: #121212;
+    --bg-secondary: #1E1E1E;
+    --primary-yellow: #EAB308;
+    --text-light: #E5E7EB;
+    --text-secondary: #9CA3AF;
+    --font-family-en: 'Poppins', sans-serif;
+    --font-family-ar: 'Cairo', sans-serif;
+    --error-red: #F87171;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-family-en);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* --- Form Container & Header --- */
+.form-container {
+    background-color: var(--bg-secondary);
+    padding: 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 800px;
+    border: 1px solid #333;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--primary-yellow);
+}
+
+.form-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-yellow);
+    margin-bottom: 10px;
+}
+
+.form-header .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Form Sections (Fieldset) --- */
+fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+legend {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #444;
+    width: 100%;
+}
+
+/* --- Form Elements --- */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    color: var(--text-light);
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-yellow);
+    box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.2);
+}
+
+/* Custom style for file input */
+input[type="file"] {
+    font-size: 0.9rem;
+    padding: 8px;
+}
+
+/* Checkbox group styling */
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+/* --- Submit Button --- */
+.submit-btn {
+    width: 100%;
+    background-color: var(--primary-yellow);
+    color: var(--bg-dark);
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: scale(1.02);
+}
+
+/* --- RTL Styles for Form --- */
+body[dir="rtl"] {
+    font-family: var(--font-family-ar);
+}
+
+body[dir="rtl"] .back-link .fa-arrow-left {
+    transform: scaleX(-1);
+}

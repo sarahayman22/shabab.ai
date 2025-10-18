@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="docTitle">Shabab.ai - Youth Empowerment Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <nav class="navbar">
+            <a href="#" class="nav-logo">Shabab.ai</a>
+
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link" data-lang="navHome">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link" data-lang="navAbout">About</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link" data-lang="navContact">Contact</a></li>
+                <li class="nav-item lang-switcher-mobile">
+                    <button id="lang-toggle-mobile">
+                        <i class="fas fa-globe"></i>
+                        <span id="lang-text-mobile">العربية</span>
+                    </button>
+                </li>
+            </ul>
+
+            <div class="desktop-controls">
+                <div class="nav-social">
+                    <a href="https://whatsapp.com/channel/0029Vaba7CG3gvWZboQM7p1a" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/shabab.ai/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@shabab.ai" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <div class="lang-switcher">
+                    <button id="lang-toggle-desktop"><i class="fas fa-globe"></i></button>
+                </div>
+            </div>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="slideshow-container">
+                <div class="slide fade" id="slide1">
+                    <div class="hero-content">
+                        <h1 data-lang="heroTitle1">Unlocking youth potential through AI, creativity, and mentorship.</h1>
+                        <p data-lang="heroSubtitle1">Your community. Your future. Your journey.</p>
+                        <a href="./Join Your Community/form.html" class="cta-button" data-lang="heroCta1">Join Your Community Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="slide fade" id="slide2">
+                    <div class="hero-content">
+                        <h1 data-lang="heroTitle2">Mentorship that fuels your growth.</h1>
+                        <a href="./Start Learning/learning.html" class="cta-button" data-lang="heroCta2">Start Learning</a>
+                    </div>
+                </div>
+                <div class="slide fade" id="slide3">
+                    <div class="hero-content">
+                        <h1 data-lang="heroTitle3">Innovative projects. Real-world impact.</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="dots-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </section>
+
+        <section id="about" class="mission">
+            <h2 data-lang="missionTitle">Our Mission</h2>
+            <p class="subtitle" data-lang="missionSubtitle">We empower young people to create their own future by:</p>
+            <div class="mission-items-container">
+                <div class="mission-item">
+                    <div class="icon-circle"><i class="fas fa-briefcase"></i></div>
+                    <h3 data-lang="missionItem1Title">Reducing youth unemployment</h3>
+                    <p data-lang="missionItem1Text">Through practical AI and digital skills.</p>
+                </div>
+                <div class="mission-item">
+                    <div class="icon-circle"><i class="fas fa-lightbulb"></i></div>
+                    <h3 data-lang="missionItem2Title">Building a clearer vision</h3>
+                    <p data-lang="missionItem2Text">Helping youth craft a clear path for their future.</p>
+                </div>
+                <div class="mission-item">
+                    <div class="icon-circle"><i class="fas fa-star"></i></div>
+                    <h3 data-lang="missionItem3Title">Discovering unique talents</h3>
+                    <p data-lang="missionItem3Text">Enabling youth to discover and strengthen their gifts.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="what-we-do">
+            <h2 data-lang="whatWeDoTitle">What We Do</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="photo/AI.png" alt="Woman presenting">
+                    <div class="card-overlay">
+                        <h3 data-lang="card1Title">AI Skills</h3>
+                        <p data-lang="card1Text">Equipping youth with practical, future-ready digital tools.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="photo/creativity.jpg" alt="Team brainstorming">
+                    <div class="card-overlay">
+                        <h3 data-lang="card2Title">Creativity</h3>
+                        <p data-lang="card2Text">Encouraging new ways of thinking to solve challenges.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="photo/mintor.png" alt="Mentor helping mentee">
+                    <div class="card-overlay">
+                        <h3 data-lang="card3Title">Mentorship</h3>
+                        <p data-lang="card3Text">Connecting young people with mentors who inspire and guide.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="what-we-offer">
+            <h2 data-lang="whatWeOfferTitle">What We Offer</h2>
+            <p class="subtitle" data-lang="whatWeOfferSubtitle">At Shabab.ai, we provide an ecosystem to support youth in every stage of their journey.</p>
+            <div class="offer-grid">
+                <div class="offer-item">
+                    <i class="fas fa-users"></i>
+                    <h3 data-lang="offer1Title">Networking & Exposure</h3>
+                    <p data-lang="offer1Text">Connect with peers, mentors, and real opportunities.</p>
+                </div>
+                <div class="offer-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3 data-lang="offer2Title">Learning Skills</h3>
+                    <p data-lang="offer2Text">Build future-ready knowledge in AI and beyond.</p>
+                </div>
+                <div class="offer-item">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <h3 data-lang="offer3Title">Solving Problems</h3>
+                    <p data-lang="offer3Text">Apply creativity and technology to real-world challenges.</p>
+                </div>
+                <div class="offer-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h3 data-lang="offer4Title">Creating Value</h3>
+                    <p data-lang="offer4Text">Turn ideas into meaningful impact for careers and communities.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="get-in-touch">
+        <h2 data-lang="footerTitle">Get in Touch</h2>
+        <p class="subtitle" data-lang="footerSubtitle">Have questions, want to collaborate, or ready to join Shabab.ai? We'd love to hear from you.</p>
+        <div class="contact-container">
+            <div class="contact-box">
+                <i class="fas fa-envelope"></i>
+                <h4 data-lang="footerEmailTitle">Email</h4>
+                <a href="mailto:Yalla@shabab.ai">Yalla@shabab.ai</a>
+            </div>
+            <div class="contact-box">
+                <i class="fab fa-instagram"></i>
+                <h4 data-lang="footerInstagramTitle">Instagram</h4>
+                <a href="https://www.instagram.com/shabab.ai/">@shabab.ai</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
