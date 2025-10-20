@@ -1,0 +1,168 @@
+/* --- Global Styles for Form Page --- */
+:root {
+    --bg-dark: #121212;
+    --bg-secondary: #1E1E1E;
+    --primary-yellow: #EAB308;
+    --text-light: #E5E7EB;
+    --text-secondary: #9CA3AF;
+    --font-family-en: 'Poppins', sans-serif;
+    --font-family-ar: 'Cairo', sans-serif;
+    --error-red: #F87171;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-family-en);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    display: flex;
+    justify-content: center; /* Centers the form card */
+    align-items: flex-start; /* Aligns card to the top */
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+/* --- Form Container & Header (INSIDE the card) --- */
+.form-container {
+    background-color: var(--bg-secondary);
+    padding: 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 800px;
+    border: 1px solid #333;
+}
+
+.form-header {
+    text-align: center; /* Centers the back-link, h1, and subtitle */
+    margin-bottom: 40px;
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 600;
+    margin-bottom: 20px; /* Adds space below the link */
+}
+
+.back-link:hover {
+    color: var(--primary-yellow);
+}
+
+.back-link i {
+    margin-right: 8px;
+}
+
+body[dir="rtl"] .back-link i {
+    margin-right: 0;
+    margin-left: 8px;
+    transform: scaleX(-1);
+}
+
+.form-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-yellow);
+    margin-bottom: 10px;
+}
+
+.form-header .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Form Sections (Fieldset) --- */
+fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.form-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #444;
+    width: 100%;
+    text-align: left;
+}
+
+body[dir="rtl"] .form-section h2 {
+    text-align: right;
+}
+
+
+/* --- Form Elements --- */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    color: var(--text-light);
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-yellow);
+    box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.2);
+}
+
+input[type="file"] {
+    font-size: 0.9rem;
+    padding: 8px;
+    color: var(--text-secondary);
+}
+
+/* --- Submit Button --- */
+.cta-button {
+    width: 100%;
+    background-color: var(--primary-yellow);
+    color: var(--bg-dark);
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.cta-button:hover {
+    transform: scale(1.02);
+}
+
+/* --- RTL Styles for Form --- */
+body[dir="rtl"] {
+    font-family: var(--font-family-ar);
+}

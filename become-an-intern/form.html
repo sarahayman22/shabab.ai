@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="internFormDocTitle">Apply for an Internship - Shabab.ai</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="form-container">
+        
+        <header class="form-header">
+            <a href="../index.html" class="back-link" data-lang="formBackLink">
+                <i class="fas fa-arrow-left"></i> 
+                <span data-lang="formBackLink">Back to Home</span>
+            </a>
+            <h1 data-lang="internFormTitle">Become an Intern</h1>
+            <p class="subtitle" data-lang="internFormSubtitle">Ready to gain real-world experience? Apply for an internship and work on innovative projects.</p>
+        </header>
+        
+        <form action="#" method="POST">
+            <fieldset class="form-section">
+                <h2 data-lang="formSection1Title">Personal Information</h2>
+                <div class="form-group">
+                    <label for="full-name" data-lang="formFullName">Full Name</label>
+                    <input type="text" id="full-name" name="full_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" data-lang="formEmail">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" data-lang="formPhone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <h2 data-lang="formSection2Title">Professional & Academic Background</h2>
+                <div class="form-group">
+                    <label for="education" data-lang="formEducation">Highest Level of Education</label>
+                    <select id="education" name="education">
+                        <option value="" data-lang="formSelectOption">Please select...</option>
+                        <option value="high-school" data-lang="formEduHighSchool">High School</option>
+                        <option value="bachelors" data-lang="formEduBachelors">Bachelor's Degree</option>
+                        <option value="masters" data-lang="formEduMasters">Master's Degree</option>
+                        <option value="phd" data-lang="formEduPhD">PhD</option>
+                        <option value="other" data-lang="formEduOther">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="field-of-study" data-lang="formFieldOfStudy">Field of Study / Interest</label>
+                    <input type="text" id="field-of-study" name="field_of_study">
+                </div>
+                <div class="form-group">
+                    <label for="cv-upload" data-lang="formCV">Upload Your CV (PDF, DOC, DOCX)</label>
+                    <input type="file" id="cv-upload" name="cv_upload" accept=".pdf,.doc,.docx">
+                </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <h2 data-lang="internFormSection3Title">Internship Details</h2>
+                <div class="form-group">
+                    <label for="availability" data-lang="internFormAvailability">Availability (e.g., Start Date, Hours/Week)</label>
+                    <input type="text" id="availability" name="availability">
+                </div>
+                <div class="form-group">
+                    <label for="interests" data-lang="internFormInterests">Which areas are you most interested in?</label>
+                    <textarea id="interests" name="interests" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="goals" data-lang="internFormGoals">What do you hope to learn during your internship?</label>
+                    <textarea id="goals" name="goals" rows="4"></textarea>
+                </div>
+            </fieldset>
+            
+            <button type="submit" class="cta-button" data-lang="internFormSubmitBtn">Submit Internship Application</button>
+        </form>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

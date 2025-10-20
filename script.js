@@ -1,6 +1,8 @@
 // === Translations are now inside the script file ===
+// === Translations object - UPDATED ===
 const translations = {
   "en": {
+    // --- Existing Translations ---
     "docTitle": "Shabab.ai - Youth Empowerment Hub",
     "navHome": "Home",
     "navAbout": "About",
@@ -12,9 +14,7 @@ const translations = {
     "heroCtaMentee": "Become a Mentee",
     "heroCtaMentor": "Become a Mentor",
     "heroTitle3": "Innovative projects. Real-world impact.",
-    // === NEW TRANSLATION ADDED ===
-    "heroCtaIntern": "Become an Intern",
-    // =============================
+    "heroCtaIntern": "Become an Intern", // Assuming you might add this later
     "missionTitle": "Our Mission",
     "missionSubtitle": "We empower young people to create their own future by:",
     "missionItem1Title": "Reducing youth unemployment",
@@ -43,9 +43,100 @@ const translations = {
     "footerTitle": "Get in Touch",
     "footerSubtitle": "Have questions, want to collaborate, or ready to join Shabab.ai? We'd love to hear from you.",
     "footerEmailTitle": "Email",
-    "footerInstagramTitle": "Instagram"
+    "footerInstagramTitle": "Instagram",
+
+    // --- Join Form Translations (Add any missing ones if needed) ---
+    "formDocTitle": "Join Shabab.ai Community",
+    "formBackLink": "Back to Home",
+    "formTitle": "Join the Shabab.ai Community",
+    "formSubtitle": "Fill out the form below to start your journey with us. We're excited to learn more about you!",
+    "formSection1Title": "Personal Information",
+    "formFullName": "Full Name",
+    "formEmail": "Email Address",
+    "formPhone": "Phone Number (Optional)",
+    "formSection2Title": "Professional & Academic Background",
+    "formEducation": "Highest Level of Education",
+    "formSelectOption": "Please select...",
+    "formEduHighSchool": "High School",
+    "formEduBachelors": "Bachelor's Degree",
+    "formEduMasters": "Master's Degree",
+    "formEduPhD": "PhD",
+    "formEduOther": "Other",
+    "formFieldOfStudy": "Field of Study / Interest",
+    "formCV": "Upload Your CV (PDF, DOC, DOCX)",
+    "formSection3Title": "Your Interests",
+    "formInterestPrompt": "What are you hoping to gain from Shabab.ai? (Select all that apply)",
+    "formGoalMentorship": "Mentorship",
+    "formGoalNetworking": "Networking",
+    "formGoalSkills": "Building Skills",
+    "formGoalJobs": "Job Opportunities",
+    "formProjectIdea": "Do you have an idea for a project you'd like to work on? Tell us about it.",
+    "formSubmitBtn": "Submit Application",
+
+    // --- Learning Form Translations (Add any missing ones if needed) ---
+    "learningDocTitle": "Start Your Learning Journey - Shabab.ai",
+    "learningTitle": "Start Your Learning Journey",
+    "learningSubtitle": "Your feedback is vital. Help us understand what you want to learn and how we can best support you.",
+    "learningSection1Title": "Learning Interests",
+    "learningInterestPrompt": "Which topics are you most interested in learning about? (Check all that apply)",
+    "learningTopicAI": "AI & Machine Learning",
+    "learningTopicCoding": "Web & App Development",
+    "learningTopicDesign": "UI/UX & Graphic Design",
+    "learningTopicMarketing": "Digital Marketing & SEO",
+    "learningTopicBusiness": "Entrepreneurship & Startups",
+    "learningOtherInterests": "Are there any other topics you're passionate about?",
+    "learningOtherPlaceholder": "e.g., Video Editing, Public Speaking, etc.",
+    "learningSection2Title": "Your Challenges & Needs",
+    "learningChallenges": "What are the biggest challenges you face when trying to learn new skills?",
+    "learningChallengesPlaceholder": "e.g., Lack of time, not knowing where to start, cost of courses...",
+    "learningSupport": "What kind of support would be most helpful for you?",
+    "learningSupportMentorship": "One-on-one mentorship",
+    "learningSupportCourses": "Structured online courses",
+    "learningSupportWorkshops": "Live workshops & webinars",
+    "learningSupportCommunity": "A community to learn with",
+    "learningSubmitBtn": "Submit My Feedback",
+
+    // --- NEW: Mentor Form Translations ---
+    "mentorFormDocTitle": "Become a Mentor - Shabab.ai",
+    "mentorFormTitle": "Become a Mentor",
+    "mentorFormSubtitle": "Share your expertise and guide the next generation. Fill out the form below to apply as a mentor.",
+    "mentorFormLinkedIn": "LinkedIn Profile (Optional)",
+    "mentorFormSection2Title": "Expertise & Experience",
+    "mentorFormExpertise": "Areas of Expertise",
+    "mentorFormExperience": "Years of Professional Experience",
+    "mentorFormCV": "Upload Your CV or Bio (PDF, DOC, DOCX)",
+    "mentorFormSection3Title": "Mentorship Approach",
+    "mentorFormAvailability": "How many hours per month can you dedicate to mentorship?",
+    "mentorFormMotivation": "Why do you want to become a mentor with Shabab.ai?",
+    "mentorFormSubmitBtn": "Apply to be a Mentor",
+
+    // --- NEW: Mentee Form Translations ---
+    "menteeFormDocTitle": "Become a Mentee - Shabab.ai",
+    "menteeFormTitle": "Become a Mentee",
+    "menteeFormSubtitle": "Ready to accelerate your growth? Apply for mentorship to get guidance from experienced professionals.",
+    "menteeFormSection2Title": "Goals & Interests",
+    "menteeFormGoals": "What are your main learning or career goals?",
+    "menteeFormMentorPref": "What areas of expertise are you looking for in a mentor?",
+    "menteeFormCV": "Upload Your CV (Optional, PDF/DOC/DOCX)",
+    "menteeFormSection3Title": "Availability & Commitment",
+    "menteeFormAvailability": "How much time can you commit to mentorship meetings per month?",
+    "menteeFormExpectations": "What do you expect to gain from this mentorship?",
+    "menteeFormSubmitBtn": "Apply for Mentorship",
+    "mentorFormPhone": "Phone Number",
+
+    // --- NEW: Intern Form Translations ---
+    "internFormDocTitle": "Apply for an Internship - Shabab.ai",
+    "internFormTitle": "Become an Intern",
+    "internFormSubtitle": "Ready to gain real-world experience? Apply for an internship and work on innovative projects.",
+    "internFormSection3Title": "Internship Details",
+    "internFormAvailability": "Availability (e.g., Start Date, Hours/Week)",
+    "internFormInterests": "Which areas are you most interested in?",
+    "internFormGoals": "What do you hope to learn during your internship?",
+    "internFormSubmitBtn": "Submit Internship Application"
+
   },
   "ar": {
+    // --- Existing Translations ---
     "docTitle": "شباب.ai - مركز تمكين الشباب",
     "navHome": "الرئيسية",
     "navAbout": "حولنا",
@@ -54,12 +145,10 @@ const translations = {
     "heroSubtitle1": "مجتمعك. مستقبلك. رحلتك.",
     "heroCta1": "انضم إلى مجتمعك الآن",
     "heroTitle2": "إرشاد يغذي نموك.",
-    "heroCtaMentee": "كن متدربًا",
-    "heroCtaMentor": "كن مرشدًا",
+    "heroCtaMentee": "كن مستفيداً",
+    "heroCtaMentor": "كن مرشداً",
     "heroTitle3": "مشاريع مبتكرة. تأثير واقعي.",
-    // === NEW TRANSLATION ADDED ===
     "heroCtaIntern": "انضم كمتدرب",
-    // =============================
     "missionTitle": "مهمتنا",
     "missionSubtitle": "نحن نمكّن الشباب ليصنعوا مستقبلهم بأنفسهم من خلال:",
     "missionItem1Title": "تقليل بطالة الشباب",
@@ -88,11 +177,98 @@ const translations = {
     "footerTitle": "تواصل معنا",
     "footerSubtitle": "هل لديك أسئلة، أو ترغب في التعاون، أو مستعد للانضمام إلى شباب.ai؟ نود أن نسمع منك.",
     "footerEmailTitle": "البريد الإلكتروني",
-    "footerInstagramTitle": "انستغرام"
+    "footerInstagramTitle": "انستغرام",
+
+    // --- Join Form Translations ---
+    "formDocTitle": "انضم إلى مجتمع شباب.ai",
+    "formBackLink": "العودة إلى الرئيسية",
+    "formTitle": "انضم إلى مجتمع شباب.ai",
+    "formSubtitle": "املأ النموذج أدناه لبدء رحلتك معنا. نحن متحمسون لمعرفة المزيد عنك!",
+    "formSection1Title": "المعلومات الشخصية",
+    "formFullName": "الاسم الكامل",
+    "formEmail": "البريد الإلكتروني",
+    "formPhone": "رقم الهاتف (اختياري)",
+    "formSection2Title": "الخلفية المهنية والأكاديمية",
+    "formEducation": "أعلى مستوى تعليمي",
+    "formSelectOption": "يرجى الاختيار...",
+    "formEduHighSchool": "الثانوية العامة",
+    "formEduBachelors": "درجة البكالوريوس",
+    "formEduMasters": "درجة الماجستير",
+    "formEduPhD": "درجة الدكتوراه",
+    "formEduOther": "أخرى",
+    "formFieldOfStudy": "مجال الدراسة / الاهتمام",
+    "formCV": "قم بتحميل سيرتك الذاتية (PDF, DOC, DOCX)",
+    "formSection3Title": "اهتماماتك",
+    "formInterestPrompt": "ماذا تأمل في الحصول عليه من شباب.ai؟ (اختر كل ما ينطبق)",
+    "formGoalMentorship": "الإرشاد",
+    "formGoalNetworking": "التواصل",
+    "formGoalSkills": "بناء المهارات",
+    "formGoalJobs": "فرص عمل",
+    "formProjectIdea": "هل لديك فكرة لمشروع تود العمل عليه؟ أخبرنا عنها.",
+    "formSubmitBtn": "إرسال الطلب",
+
+    // --- Learning Form Translations ---
+    "learningDocTitle": "ابدأ رحلتك التعليمية - شباب.ai",
+    "learningTitle": "ابدأ رحلتك التعليمية",
+    "learningSubtitle": "ملاحظاتك حيوية. ساعدنا على فهم ما تريد أن تتعلمه وكيف يمكننا دعمك بشكل أفضل.",
+    "learningSection1Title": "الاهتمامات التعليمية",
+    "learningInterestPrompt": "ما هي المواضيع التي تهتم بتعلمها أكثر؟ (اختر كل ما ينطبق)",
+    "learningTopicAI": "الذكاء الاصطناعي وتعلم الآلة",
+    "learningTopicCoding": "تطوير الويب والتطبيقات",
+    "learningTopicDesign": "تصميم واجهة المستخدم وتجربة المستخدم والجرافيك",
+    "learningTopicMarketing": "التسويق الرقمي وتحسين محركات البحث",
+    "learningTopicBusiness": "ريادة الأعمال والشركات الناشئة",
+    "learningOtherInterests": "هل هناك أي مواضيع أخرى تثير شغفك؟",
+    "learningOtherPlaceholder": "مثال: تحرير الفيديو، الخطابة العامة، إلخ.",
+    "learningSection2Title": "تحدياتك واحتياجاتك",
+    "learningChallenges": "ما هي أكبر التحديات التي تواجهها عند محاولة تعلم مهارات جديدة؟",
+    "learningChallengesPlaceholder": "مثال: ضيق الوقت، عدم معرفة من أين تبدأ، تكلفة الدورات...",
+    "learningSupport": "ما هو نوع الدعم الذي سيكون مفيدًا لك أكثر؟",
+    "learningSupportMentorship": "إرشاد فردي",
+    "learningSupportCourses": "دورات منظمة عبر الإنترنت",
+    "learningSupportWorkshops": "ورش عمل وندوات مباشرة",
+    "learningSupportCommunity": "مجتمع للتعلم معه",
+    "learningSubmitBtn": "إرسال ملاحظاتي",
+
+    // --- NEW: Mentor Form Translations ---
+    "mentorFormDocTitle": "كن مرشدًا - شباب.ai",
+    "mentorFormTitle": "كن مرشدًا",
+    "mentorFormSubtitle": "شارك خبرتك وقم بتوجيه الجيل القادم. املأ النموذج أدناه للتقديم كمرشد.",
+    "mentorFormLinkedIn": "ملف لينكد إن (اختياري)",
+    "mentorFormSection2Title": "الخبرة والتخصص",
+    "mentorFormExpertise": "مجالات الخبرة",
+    "mentorFormExperience": "سنوات الخبرة المهنية",
+    "mentorFormCV": "قم بتحميل سيرتك الذاتية أو نبذة تعريفية (PDF, DOC, DOCX)",
+    "mentorFormSection3Title": "نهج الإرشاد",
+    "mentorFormAvailability": "كم ساعة شهريًا يمكنك تخصيصها للإرشاد؟",
+    "mentorFormMotivation": "لماذا ترغب في أن تصبح مرشدًا مع شباب.ai؟",
+    "mentorFormSubmitBtn": "قدم لتكون مرشداً",
+    
+    // --- NEW: Mentee Form Translations ---
+    "menteeFormDocTitle": "كن مستفيداً - شباب.ai",
+    "menteeFormTitle": "كن مستفيداً",
+    "menteeFormSubtitle": "هل أنت مستعد لتسريع نموك؟ قدم طلبًا للإرشاد للحصول على توجيه من محترفين ذوي خبرة.",
+    "menteeFormSection2Title": "الأهداف والاهتمامات",
+    "menteeFormGoals": "ما هي أهدافك التعليمية أو المهنية الرئيسية؟",
+    "menteeFormMentorPref": "ما هي مجالات الخبرة التي تبحث عنها في المرشد؟",
+    "menteeFormCV": "قم بتحميل سيرتك الذاتية (اختياري، PDF/DOC/DOCX)",
+    "menteeFormSection3Title": "التوفر والالتزام",
+    "menteeFormAvailability": "كم من الوقت يمكنك الالتزام به لجلسات الإرشاد شهريًا؟",
+    "menteeFormExpectations": "ماذا تتوقع أن تكتسب من هذا الإرشاد؟",
+    "menteeFormSubmitBtn": "قدم طلب الإرشاد",
+    "mentorFormPhone": "رقم الهاتف",
+   
+    // --- NEW: Intern Form Translations ---
+    "internFormDocTitle": "قدم لفرصة تدريب - شباب.ai",
+    "internFormTitle": "انضم كمتدرب",
+    "internFormSubtitle": "هل أنت مستعد لاكتساب خبرة عملية حقيقية؟ قدم لفرصة تدريب واعمل على مشاريع مبتكرة.",
+    "internFormSection3Title": "تفاصيل التدريب",
+    "internFormAvailability": "التفرغ (مثال: تاريخ البدء، عدد الساعات أسبوعياً)",
+    "internFormInterests": "ما هي المجالات التي تهتم بها أكثر؟",
+    "internFormGoals": "ماذا تأمل أن تتعلم خلال فترة تدريبك؟",
+    "internFormSubmitBtn": "إرسال طلب التدريب"
   }
 };
-// =======================================================
-
 
 document.addEventListener("DOMContentLoaded", function() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -101,8 +277,12 @@ document.addEventListener("DOMContentLoaded", function() {
         currentLang = langFromUrl;
     }
 
-    showSlides(slideIndex);
-    startSlideShow();
+    // Check if slideshow elements exist before running slideshow logic
+    if (document.getElementsByClassName("slide").length > 0) {
+        showSlides(slideIndex);
+        startSlideShow();
+    }
+    
     translatePage();
 });
 
@@ -139,12 +319,15 @@ function startSlideShow() {
 // --- Navigation Drawer Logic ---
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
-hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-});
+// Check if hamburger exists before adding listener
+if (hamburger) {
+    hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+    });
+}
 document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-    if (navMenu.classList.contains("active")) {
+    if (navMenu && navMenu.classList.contains("active")) {
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
     }
@@ -159,10 +342,14 @@ const langTextDesktop = document.getElementById('lang-text-desktop');
 const translatableElements = document.querySelectorAll('[data-lang]');
 
 // === LINK VARIABLES UPDATED ===
-const joinLink = document.querySelector('a[href*="form.html"]');
+// Updated to query links on the main page specifically to avoid errors on form pages
+const joinLink = document.querySelector('a[href*="Join Your Community/form.html"]');
 const menteeLink = document.querySelector('a[href*="become-a-mentee/form.html"]');
 const mentorLink = document.querySelector('a[href*="become-a-mentor/form.html"]');
 const internLink = document.querySelector('a[href*="become-an-intern/form.html"]');
+
+// Get the back link on form pages
+const backLink = document.querySelector('a.back-link[href*="index.html"]');
 // ==============================
 
 let currentLang = 'en';
@@ -178,6 +365,10 @@ function updateContent() {
             if (el.tagName === 'A' && el.classList.contains('cta-button')) {
                 const iconHTML = el.querySelector('i')?.outerHTML || '';
                 el.innerHTML = `${translations[currentLang][key]} ${iconHTML}`;
+            } else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                if(el.placeholder) {
+                    el.placeholder = translations[currentLang][key];
+                }
             } else {
                 el.textContent = translations[currentLang][key];
             }
@@ -195,10 +386,16 @@ function updateContent() {
     }
     
     // === LINK UPDATING LOGIC MODIFIED ===
-    if(joinLink) joinLink.href = `./Join Your Community/form.html?lang=${currentLang}`;
-    if(menteeLink) menteeLink.href = `./become-a-mentee/form.html?lang=${currentLang}`;
-    if(mentorLink) mentorLink.href = `./become-a-mentor/form.html?lang=${currentLang}`;
-    if(internLink) internLink.href = `./become-an-intern/form.html?lang=${currentLang}`;
+    const langParam = `?lang=${currentLang}`;
+
+    // Update main page links if they exist
+    if(joinLink) joinLink.href = `./Join Your Community/form.html${langParam}`;
+    if(menteeLink) menteeLink.href = `./become-a-mentee/form.html${langParam}`;
+    if(mentorLink) mentorLink.href = `./become-a-mentor/form.html${langParam}`;
+    if(internLink) internLink.href = `./become-an-intern/form.html${langParam}`;
+
+    // Update form page "back" link if it exists
+    if(backLink) backLink.href = `../index.html${langParam}`;
     // ====================================
 }
 
@@ -206,11 +403,16 @@ function switchLanguage(event) {
     event.stopPropagation();
     currentLang = currentLang === 'en' ? 'ar' : 'en';
     translatePage();
-    if (navMenu.classList.contains("active")) {
+    if (navMenu && navMenu.classList.contains("active")) {
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
     }
 }
 
-langToggleDesktop.addEventListener('click', switchLanguage);
-langToggleMobile.addEventListener('click', switchLanguage);
+// Add listeners only if the buttons exist
+if (langToggleDesktop) {
+    langToggleDesktop.addEventListener('click', switchLanguage);
+}
+if (langToggleMobile) {
+    langToggleMobile.addEventListener('click', switchLanguage);
+}

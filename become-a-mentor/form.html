@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="mentorFormDocTitle">Become a Mentor - Shabab.ai</title>
+    <link rel="stylesheet" href="form.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="form-container">
+        <header class="form-header">
+            <a href="../index.html" class="back-link" data-lang="formBackLink"><i class="fas fa-arrow-left"></i> Back to Home</a>
+            <h1 data-lang="mentorFormTitle">Become a Mentor</h1>
+            <p class="subtitle" data-lang="mentorFormSubtitle">Share your expertise and guide the next generation. Fill out the form below to apply as a mentor.</p>
+        </header>
+
+        <form id="mentor-form" novalidate>
+            <fieldset>
+                <legend data-lang="formSection1Title">Personal Information</legend>
+                <div class="form-group">
+                    <label for="fullName" data-lang="formFullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" data-lang="formEmail">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone" data-lang="mentorFormPhone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="linkedin" data-lang="mentorFormLinkedIn">LinkedIn Profile (Optional)</label>
+                    <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend data-lang="mentorFormSection2Title">Expertise & Experience</legend>
+                <div class="form-group">
+                    <label for="expertise" data-lang="mentorFormExpertise">Areas of Expertise</label>
+                    <input type="text" id="expertise" name="expertise" required placeholder="e.g., AI, Web Development, Marketing, Entrepreneurship">
+                </div>
+                <div class="form-group">
+                    <label for="experience" data-lang="mentorFormExperience">Years of Professional Experience</label>
+                    <input type="number" id="experience" name="experience" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="cv" data-lang="mentorFormCV">Upload Your CV or Bio (PDF, DOC, DOCX)</label>
+                    <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend data-lang="mentorFormSection3Title">Mentorship Approach</legend>
+                 <div class="form-group">
+                    <label for="availability" data-lang="mentorFormAvailability">How many hours per month can you dedicate to mentorship?</label>
+                     <select id="availability" name="availability" required>
+                        <option value="" data-lang="formSelectOption">Please select...</option>
+                        <option value="1-2">1-2 hours</option>
+                        <option value="3-5">3-5 hours</option>
+                        <option value="5+">5+ hours</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="motivation" data-lang="mentorFormMotivation">Why do you want to become a mentor with Shabab.ai?</label>
+                    <textarea id="motivation" name="motivation" rows="4" required></textarea>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="submit-btn" data-lang="mentorFormSubmitBtn">Apply to be a Mentor</button>
+        </form>
+    </div>
+    <script src="form.js"></script> </body>
+</html>

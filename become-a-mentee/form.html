@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="menteeFormDocTitle">Become a Mentee - Shabab.ai</title>
+    <link rel="stylesheet" href="form.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="form-container">
+        <header class="form-header">
+            <a href="../index.html" class="back-link" data-lang="formBackLink"><i class="fas fa-arrow-left"></i> Back to Home</a>
+            <h1 data-lang="menteeFormTitle">Become a Mentee</h1>
+            <p class="subtitle" data-lang="menteeFormSubtitle">Ready to accelerate your growth? Apply for mentorship to get guidance from experienced professionals.</p>
+        </header>
+
+        <form id="mentee-form" novalidate>
+            <fieldset>
+                <legend data-lang="formSection1Title">Personal Information</legend>
+                <div class="form-group">
+                    <label for="fullName" data-lang="formFullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" data-lang="formEmail">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" data-lang="formPhone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend data-lang="menteeFormSection2Title">Goals & Interests</legend>
+                <div class="form-group">
+                    <label for="learningGoals" data-lang="menteeFormGoals">What are your main learning or career goals?</label>
+                    <textarea id="learningGoals" name="learningGoals" rows="4" required placeholder="e.g., Get a job in AI, start my own project, improve my coding skills..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="mentorPreference" data-lang="menteeFormMentorPref">What areas of expertise are you looking for in a mentor?</label>
+                    <input type="text" id="mentorPreference" name="mentorPreference" required placeholder="e.g., AI specialist, experienced web developer, marketing expert...">
+                </div>
+                 <div class="form-group">
+                    <label for="cv" data-lang="menteeFormCV">Upload Your CV (Optional, PDF/DOC/DOCX)</label>
+                    <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend data-lang="menteeFormSection3Title">Availability & Commitment</legend>
+                <div class="form-group">
+                    <label for="availability" data-lang="menteeFormAvailability">How much time can you commit to mentorship meetings per month?</label>
+                    <select id="availability" name="availability" required>
+                        <option value="" data-lang="formSelectOption">Please select...</option>
+                        <option value="1-2">1-2 hours</option>
+                        <option value="3-5">3-5 hours</option>
+                        <option value="5+">5+ hours</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="expectations" data-lang="menteeFormExpectations">What do you expect to gain from this mentorship?</label>
+                    <textarea id="expectations" name="expectations" rows="3"></textarea>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="submit-btn" data-lang="menteeFormSubmitBtn">Apply for Mentorship</button>
+        </form>
+    </div>
+    <script src="form.js"></script> </body>
+</html>
