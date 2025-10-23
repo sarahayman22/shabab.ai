@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="loginTitle">Shabab.ai - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Basic styling for the login page */
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: var(--bg-dark); /* Using your defined background */
+            color: var(--text-light); /* Using your defined text color */
+        }
+        .login-box {
+            background-color: var(--bg-secondary); /* Using your defined secondary background */
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* --- NEW STYLES FOR LOGO --- */
+        .login-logo {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+        .login-logo-link {
+            display: block;
+        }
+        /* --- END NEW STYLES --- */
+
+        .login-box h2 {
+            color: var(--primary-yellow); /* Your brand color */
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #444;
+            border-radius: 8px;
+            background-color: #333;
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+        .form-group input:focus {
+            border-color: var(--primary-yellow);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(234, 179, 8, 0.3);
+        }
+        .login-button {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-yellow);
+            color: var(--bg-dark);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .login-button:hover {
+            background-color: #d1a106; /* Slightly darker yellow on hover */
+            transform: translateY(-2px);
+        }
+
+        /* --- NEW STYLES FOR SIGNUP LINK --- */
+        .signup-link {
+            margin-top: 25px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        .signup-link a {
+            color: var(--primary-yellow);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+        /* --- END NEW STYLES --- */
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 30px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: var(--primary-yellow);
+        }
+        .back-link i {
+            margin-right: 8px;
+        }
+
+        /* RTL specific styles for login page */
+        body[dir="rtl"] .form-group {
+            text-align: right;
+        }
+        body[dir="rtl"] .back-link i {
+            margin-right: 0;
+            margin-left: 8px;
+            transform: scaleX(-1); /* Flip arrow for RTL */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+
+            <a href="index.html" class="login-logo-link">
+                <img src="./photo/shabab new.png" alt="Shabab.ai Logo" class="login-logo">
+            </a>
+            <h2 data-lang="loginHeading">Login to Shabab.ai</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="username" data-lang="usernameLabel">Username or Email</label>
+                    <input type="text" id="username" name="username" data-lang="usernamePlaceholder" placeholder="Enter your username or email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" data-lang="passwordLabel">Password</label>
+                    <input type="password" id="password" name="password" data-lang="passwordPlaceholder" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="login-button" data-lang="loginButton">Login</button>
+            </form>
+
+            <p class="signup-link">
+                <span data-lang="signupPrompt">Don't have an account? </span>
+                <a href="signup.html" data-lang="signupLink">Sign Up</a>
+            </p>
+            <a href="index.html" class="back-link" data-lang="backToHome">
+                <i class="fas fa-arrow-left"></i> 
+<span data-lang="backToHomeInner">Back to Home</span>
+            </a>
+        </div>
+    </div>
+    <script>
+        // Placeholder for login page translations
+        const translations = {
+            en: {
+                loginTitle: "Shabab.ai - Login",
+                loginHeading: "Login to Shabab.ai",
+                usernameLabel: "Username or Email",
+                usernamePlaceholder: "Enter your username or email",
+                passwordLabel: "Password",
+                passwordPlaceholder: "Enter your password",
+                loginButton: "Login",
+                backToHome: "Back to Home", // Used by JS logic, keep it
+                backToHomeInner: "Back to Home", // For the new span
+                signupPrompt: "Don't have an account? ",
+                signupLink: "Sign Up"
+            },
+            ar: {
+                loginTitle: "شباب.ai - تسجيل الدخول",
+                loginHeading: "تسجيل الدخول إلى شباب.ai",
+                usernameLabel: "اسم المستخدم أو البريد الإلكتروني",
+                usernamePlaceholder: "أدخل اسم المستخدم أو البريد الإلكتروني الخاص بك",
+                passwordLabel: "كلمة المرور",
+                passwordPlaceholder: "أدخل كلمة المرور الخاصة بك",
+                loginButton: "تسجيل الدخول",
+                backToHome: "العودة إلى الرئيسية", // Used by JS logic, keep it
+                backToHomeInner: "العودة إلى الرئيسية", // For the new span
+                signupPrompt: "ليس لديك حساب؟ ",
+                signupLink: "إنشاء حساب"
+            }
+        };
+
+        // This function will apply translations to the login page
+        function translateLoginPage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            let currentLang = urlParams.get('lang') || 'en'; // Default to 'en'
+
+            document.documentElement.lang = currentLang;
+            document.body.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if (translations[currentLang]?.[key]) {
+                    if (el.tagName === 'INPUT') {
+                        el.placeholder = translations[currentLang][key];
+                    } else {
+                        // For anchor tags with icons like back-link
+                        if (el.classList.contains('back-link')) {
+                            // This part ensures the "Back to Home" text is also translated
+                            // We find the *inner span* we added and translate that
+                            const textSpan = el.querySelector('[data-lang="backToHomeInner"]');
+                            if (textSpan) {
+                                textSpan.textContent = translations[currentLang]['backToHomeInner'];
+                            }
+                        } else {
+                            // This will now correctly translate:
+                            // - <h2>
+                            // - <label>
+                            // - <button>
+                            // - <span data-lang="signupPrompt">
+                            // - <a data-lang="signupLink">
+                            el.textContent = translations[currentLang][key];
+                        }
+                    }
+                }
+            });
+
+            // This ensures the back-link URL also gets the lang parameter
+            const backLinkEl = document.querySelector('.back-link');
+            if (backLinkEl) {
+                backLinkEl.href = `index.html?lang=${currentLang}`;
+            }
+
+            // This ensures the signup-link URL also gets the lang parameter
+            const signupLinkEl = document.querySelector('.signup-link a');
+            if (signupLinkEl) {
+                signupLinkEl.href = `signup.html?lang=${currentLang}`;
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", translateLoginPage);
+    </script></body>
+</html>

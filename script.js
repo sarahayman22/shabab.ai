@@ -1,20 +1,20 @@
-// === Translations are now inside the script file ===
-// === Translations object - UPDATED ===
+
 const translations = {
-  "en": {
+"en": {
     // --- Existing Translations ---
     "docTitle": "Shabab.ai - Youth Empowerment Hub",
     "navHome": "Home",
     "navAbout": "About",
     "navContact": "Contact",
-    "heroTitle1": "Unlocking youth potential through AI, creativity, and mentorship.",
+    "navLogin": "Login", 
+    "heroTitle1": "Unlocking youth potential through <span class='highlight-yellow'> AI, creativity, and mentorship.</span>",
     "heroSubtitle1": "Your community. Your future. Your journey.",
     "heroCta1": "Join Your Community Now",
-    "heroTitle2": "Mentorship that fuels your growth.",
+    "heroTitle2": " <span class='highlight-yellow'>Mentorship</span> that fuels your growth.",
     "heroCtaMentee": "Become a Mentee",
     "heroCtaMentor": "Become a Mentor",
-    "heroTitle3": "Innovative projects. Real-world impact.",
-    "heroCtaIntern": "Become an Intern", // Assuming you might add this later
+    "heroTitle3": "Innovative projects. <span class='highlight-yellow'> Real-world impact.</span>",
+    "heroCtaIntern": "Become an Intern",
     "missionTitle": "Our Mission",
     "missionSubtitle": "We empower young people to create their own future by:",
     "missionItem1Title": "Reducing youth unemployment",
@@ -53,7 +53,7 @@ const translations = {
     "formSection1Title": "Personal Information",
     "formFullName": "Full Name",
     "formEmail": "Email Address",
-    "formPhone": "Phone Number (Optional)",
+    "formPhone": "Phone Number ",
     "formSection2Title": "Professional & Academic Background",
     "formEducation": "Highest Level of Education",
     "formSelectOption": "Please select...",
@@ -132,22 +132,25 @@ const translations = {
     "internFormAvailability": "Availability (e.g., Start Date, Hours/Week)",
     "internFormInterests": "Which areas are you most interested in?",
     "internFormGoals": "What do you hope to learn during your internship?",
-    "internFormSubmitBtn": "Submit Internship Application"
-
+    "internFormSubmitBtn": "Submit Internship Application",
+    "socialWhatsapp": "Join us on WhatsApp",
+    "socialInstagram": "Follow us on Instagram",
+    "socialTiktok": "Follow us on TikTok"
   },
-  "ar": {
+"ar": {
     // --- Existing Translations ---
     "docTitle": "شباب.ai - مركز تمكين الشباب",
     "navHome": "الرئيسية",
     "navAbout": "حولنا",
     "navContact": "تواصل معنا",
-    "heroTitle1": "إطلاق إمكانات الشباب من خلال الذكاء الاصطناعي والإبداع والإرشاد.",
+    "navLogin": "تسجيل الدخول",
+    "heroTitle1": "إطلاق إمكانات الشباب من خلال <span class='highlight-yellow'>الذكاء الاصطناعي والإبداع والإرشاد.</span>",
     "heroSubtitle1": "مجتمعك. مستقبلك. رحلتك.",
     "heroCta1": "انضم إلى مجتمعك الآن",
-    "heroTitle2": "إرشاد يغذي نموك.",
+    "heroTitle2": "<span class='highlight-yellow'>إرشاد</span> يغذي نموك.",
     "heroCtaMentee": "كن مستفيداً",
     "heroCtaMentor": "كن مرشداً",
-    "heroTitle3": "مشاريع مبتكرة. تأثير واقعي.",
+    "heroTitle3": "مشاريع مبتكرة. <span class='highlight-yellow'>تأثير واقعي.</span>",
     "heroCtaIntern": "انضم كمتدرب",
     "missionTitle": "مهمتنا",
     "missionSubtitle": "نحن نمكّن الشباب ليصنعوا مستقبلهم بأنفسهم من خلال:",
@@ -187,7 +190,7 @@ const translations = {
     "formSection1Title": "المعلومات الشخصية",
     "formFullName": "الاسم الكامل",
     "formEmail": "البريد الإلكتروني",
-    "formPhone": "رقم الهاتف (اختياري)",
+    "formPhone": "رقم الهاتف ",
     "formSection2Title": "الخلفية المهنية والأكاديمية",
     "formEducation": "أعلى مستوى تعليمي",
     "formSelectOption": "يرجى الاختيار...",
@@ -257,7 +260,6 @@ const translations = {
     "menteeFormExpectations": "ماذا تتوقع أن تكتسب من هذا الإرشاد؟",
     "menteeFormSubmitBtn": "قدم طلب الإرشاد",
     "mentorFormPhone": "رقم الهاتف",
-   
     // --- NEW: Intern Form Translations ---
     "internFormDocTitle": "قدم لفرصة تدريب - شباب.ai",
     "internFormTitle": "انضم كمتدرب",
@@ -266,7 +268,10 @@ const translations = {
     "internFormAvailability": "التفرغ (مثال: تاريخ البدء، عدد الساعات أسبوعياً)",
     "internFormInterests": "ما هي المجالات التي تهتم بها أكثر؟",
     "internFormGoals": "ماذا تأمل أن تتعلم خلال فترة تدريبك؟",
-    "internFormSubmitBtn": "إرسال طلب التدريب"
+    "internFormSubmitBtn": "إرسال طلب التدريب",
+    "socialWhatsapp": "انضم إلينا على واتساب",
+    "socialInstagram": "تابعنا على إنستجرام",
+    "socialTiktok": "تابعنا على تيك توك"
   }
 };
 
@@ -332,8 +337,6 @@ document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", 
         navMenu.classList.remove("active");
     }
 }));
-
-
 // --- Language Switcher Logic ---
 const langToggleDesktop = document.getElementById('lang-toggle-desktop');
 const langToggleMobile = document.getElementById('lang-toggle-mobile');
@@ -341,14 +344,11 @@ const langTextMobile = document.getElementById('lang-text-mobile');
 const langTextDesktop = document.getElementById('lang-text-desktop');
 const translatableElements = document.querySelectorAll('[data-lang]');
 
-// === LINK VARIABLES UPDATED ===
-// Updated to query links on the main page specifically to avoid errors on form pages
+// === LINK VARIABLES ===
 const joinLink = document.querySelector('a[href*="Join Your Community/form.html"]');
 const menteeLink = document.querySelector('a[href*="become-a-mentee/form.html"]');
 const mentorLink = document.querySelector('a[href*="become-a-mentor/form.html"]');
 const internLink = document.querySelector('a[href*="become-an-intern/form.html"]');
-
-// Get the back link on form pages
 const backLink = document.querySelector('a.back-link[href*="index.html"]');
 // ==============================
 
@@ -362,13 +362,26 @@ function updateContent() {
     translatableElements.forEach(el => {
         const key = el.getAttribute('data-lang');
         if (translations[currentLang]?.[key]) {
+            
             if (el.tagName === 'A' && el.classList.contains('cta-button')) {
                 const iconHTML = el.querySelector('i')?.outerHTML || '';
                 el.innerHTML = `${translations[currentLang][key]} ${iconHTML}`;
+            
+            // === ADD THIS NEW BLOCK ===
+            } else if (el.tagName === 'A' && el.classList.contains('back-link')) {
+                const iconHTML = el.querySelector('i')?.outerHTML || '';
+                el.innerHTML = `${iconHTML} ${translations[currentLang][key]}`;
+            // === END OF NEW BLOCK ===
+            
             } else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
                 if(el.placeholder) {
                     el.placeholder = translations[currentLang][key];
                 }
+            
+            /* This is critical for making the <span> tags work */
+            } else if (el.tagName === 'H1' || el.tagName === 'P') { 
+                el.innerHTML = translations[currentLang][key];
+            
             } else {
                 el.textContent = translations[currentLang][key];
             }
@@ -378,14 +391,15 @@ function updateContent() {
     document.documentElement.lang = currentLang;
     document.body.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
 
+    // === THIS IS THE EDIT FOR 'EN/AR' ===
     if (langTextMobile) {
-      langTextMobile.textContent = currentLang === 'en' ? 'العربية' : 'English';
+        langTextMobile.textContent = (currentLang === 'en' ? 'AR' : 'EN');
     }
     if (langTextDesktop) {
-      langTextDesktop.textContent = currentLang === 'en' ? 'العربية' : 'English';
+        langTextDesktop.textContent = (currentLang === 'en' ? 'AR' : 'EN');
     }
+    // === END OF THE EDIT ===
     
-    // === LINK UPDATING LOGIC MODIFIED ===
     const langParam = `?lang=${currentLang}`;
 
     // Update main page links if they exist
@@ -394,9 +408,7 @@ function updateContent() {
     if(mentorLink) mentorLink.href = `./become-a-mentor/form.html${langParam}`;
     if(internLink) internLink.href = `./become-an-intern/form.html${langParam}`;
 
-    // Update form page "back" link if it exists
     if(backLink) backLink.href = `../index.html${langParam}`;
-    // ====================================
 }
 
 function switchLanguage(event) {
@@ -408,7 +420,6 @@ function switchLanguage(event) {
         navMenu.classList.remove("active");
     }
 }
-
 // Add listeners only if the buttons exist
 if (langToggleDesktop) {
     langToggleDesktop.addEventListener('click', switchLanguage);

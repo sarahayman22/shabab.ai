@@ -31,15 +31,35 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error("Could not fetch translations:", error);
         }
     }
-
-    function updateContent(lang) {
-        document.documentElement.lang = lang;
-        document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
-        
-        // === NEW: Update the back link's href with the language ===
-        if (backLink) {
-            backLink.href = `../index.html?lang=${lang}`;
+function updateContent() {
+    translatableElements.forEach(el => {
+        const key = el.getAttribute('data-lang');
+        if (translations[currentLang]?.[key]) {
+            
+            if (el.tagName === 'A' && el.classList.contains('cta-button')) {
+                const iconHTML = el.querySelector('i')?.outerHTML || '';
+                el.innerHTML = `${translations[currentLang][key]} ${iconHTML}`;
+            
+            // === ADD THIS NEW BLOCK ===
+            } else if (el.tagName === 'A' && el.classList.contains('back-link')) {
+                const iconHTML = el.querySelector('i')?.outerHTML || '';
+                el.innerHTML = `${iconHTML} ${translations[currentLang][key]}`;
+            // === END OF NEW BLOCK ===
+            
+            } else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                if(el.placeholder) {
+                    el.placeholder = translations[currentLang][key];
+                }
+            
+            /* This is critical for making the <span> tags work */
+            } else if (el.tagName === 'H1' || el.tagName === 'P') { 
+                el.innerHTML = translations[currentLang][key];
+            
+            } else {
+                el.textContent = translations[currentLang][key];
+            }
         }
+    });
         // =========================================================
 
         translatableElements.forEach(el => {
