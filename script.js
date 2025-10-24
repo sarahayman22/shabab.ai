@@ -350,6 +350,7 @@ const menteeLink = document.querySelector('a[href*="become-a-mentee/form.html"]'
 const mentorLink = document.querySelector('a[href*="become-a-mentor/form.html"]');
 const internLink = document.querySelector('a[href*="become-an-intern/form.html"]');
 const backLink = document.querySelector('a.back-link[href*="index.html"]');
+const loginLink = document.querySelector('a[href="login.html"]');
 // ==============================
 
 let currentLang = 'en';
@@ -407,6 +408,7 @@ function updateContent() {
     if(menteeLink) menteeLink.href = `./become-a-mentee/form.html${langParam}`;
     if(mentorLink) mentorLink.href = `./become-a-mentor/form.html${langParam}`;
     if(internLink) internLink.href = `./become-an-intern/form.html${langParam}`;
+    if(loginLink) loginLink.href = `login.html${langParam}`;
 
     if(backLink) backLink.href = `../index.html${langParam}`;
 }
