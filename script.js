@@ -321,7 +321,7 @@ function startSlideShow() {
     slideInterval = setInterval(() => plusSlides(1), 5000);
 }
 
-// --- Navigation Drawer Logic ---
+// // Navigation Drawer Logic (you already have this — keep it)
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 // Check if hamburger exists before adding listener
@@ -329,14 +329,19 @@ if (hamburger) {
     hamburger.addEventListener("click", () => {
         hamburger.classList.toggle("active");
         navMenu.classList.toggle("active");
+        // update aria
+        const expanded = hamburger.classList.contains("active");
+        navMenu.setAttribute('aria-hidden', expanded ? 'false' : 'true');
     });
 }
 document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
     if (navMenu && navMenu.classList.contains("active")) {
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
+        navMenu.setAttribute('aria-hidden', 'true');
     }
 }));
+
 // --- Language Switcher Logic ---
 const langToggleDesktop = document.getElementById('lang-toggle-desktop');
 const langToggleMobile = document.getElementById('lang-toggle-mobile');
@@ -422,6 +427,18 @@ function switchLanguage(event) {
         navMenu.classList.remove("active");
     }
 }
+
+document.addEventListener('click', (e) => {
+  if (!navMenu || !hamburger) return;
+  if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+    if (navMenu.classList.contains('active')) {
+      navMenu.classList.remove('active');
+      hamburger.classList.remove('active');
+      navMenu.setAttribute('aria-hidden', 'true');
+    }
+  }
+});
+
 // Add listeners only if the buttons exist
 if (langToggleDesktop) {
     langToggleDesktop.addEventListener('click', switchLanguage);

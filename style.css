@@ -50,21 +50,20 @@ section, footer {
     padding: 20px 5%;
     height: 70px;
 }
-
-/* UPDATED: Styles for the image logo */
 .nav-logo {
+    font-size: 2rem; /* Style your logo text */
+    font-weight: 700;
+    color: var(--primary-yellow);
     text-decoration: none;
-    z-index: 1001;
+    z-index: 1001; /* Make sure logo is on top */
+}
+
+/* --- DESKTOP NAVIGATION --- */
+.navbar-right {
     display: flex;
     align-items: center;
+    gap: 20px; /* Space between desktop items */
 }
-
-/* UPDATED: Added rule for the logo image */
-.nav-logo img {
-    height: 65px; /* Adjust this height as needed for your logo */
-    width: auto;
-}
-
 /* UPDATED: Added this new class for the left-side wrapper */
 .navbar-left {
     display: flex;
@@ -182,8 +181,79 @@ section, footer {
 }
 
 .lang-switcher-mobile { display: none; }
-.hamburger { display: none; cursor: pointer; z-index: 1001; }
-.bar { display: block; width: 25px; height: 3px; margin: 5px auto; transition: all 0.3s ease-in-out; background-color: var(--text-light); }
+
+.hamburger {
+  display: flex;          /* show at all screen sizes */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 38px;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 16px;      /* gap between logo and burger */
+  z-index: 1002;
+}
+
+/* bar style (keep your existing look) */
+.bar {
+  display: block;
+  width: 22px;
+  height: 3px;
+  margin: 3px 0;
+  background-color: var(--text-light);
+  transition: all 0.25s ease;
+}
+
+/* mobile/side panel rules already in your CSS will apply at <=768px,
+   but on desktop we want the menu hidden by default and show as small dropdown when active */
+.nav-menu {
+  display: none;          /* hidden on desktop by default */
+}
+
+/* show dropdown near logo on desktop when active */
+.nav-menu.active {
+  display: block;
+  position: absolute;
+  top: 70px;              /* just below the fixed header */
+  left: 20px;             /* aligns near the logo */
+  background-color: rgba(18,18,18,0.98);
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  min-width: 180px;
+  z-index: 1001;
+}
+
+/* dropdown list styles */
+.nav-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-menu .nav-item { margin: 0; padding: 0; }
+.nav-menu .nav-link {
+  display: block;
+  padding: 8px 6px;
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+}
+.nav-menu .nav-link:hover { background: rgba(255,255,255,0.03); color: var(--primary-yellow); }
+
+/* keep existing mobile side panel behavior for small screens,
+   your file already contains extensive @media (max-width:768px) rules
+   that convert .nav-menu into a left or right sliding panel.
+   The below ensures the .nav-menu is shown as the side panel when .active */
+@media (max-width: 768px) {
+  /* keep your existing rules but ensure .nav-menu is visible when active */
+  .nav-menu { 
+    display: flex; /* overridden when mobile - your other mobile rules will handle position */
+  }
+  .nav-menu.active { left: 0; right: initial; } /* your CSS already had this */
+}
 
 
 /* --- Hero, Mission, Cards, etc. --- */
@@ -263,49 +333,100 @@ p { color: var(--text-secondary); line-height: 1.6; }
 .contact-box a { color: var(--text-secondary); text-decoration: none; }
 
 
+
 /* --- Responsive & RTL Section --- */
 @media (max-width: 992px) {
     .mission-items-container { flex-direction: column; }
 }
 
 @media (max-width: 768px) {
+    /* Hamburger and desktop controls visibility */
     .desktop-controls { display: none; }
     .hamburger { display: block; }
+
+    /* Hamburger animation styles (keeping your existing ones) */
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* --- MOBILE NAV MENU STYLING (The Burger Menu Panel) --- */
     .nav-menu {
         position: fixed;
-        left: -100%;
+        left: -100%; /* Hides the menu off-screen to the left */
         top: 0;
         gap: 0;
         flex-direction: column;
-        justify-content: center;
+        
+        /* --- KEY EDITS FOR PHOTO MATCHING --- */
+        justify-content: flex-start; /* Aligns menu items to the top, not the center */
         width: 100%;
+        max-width: 250px; /* <--- Sets the fixed width of the side panel */
+        padding-top: 80px; /* <--- Pushes content down from the top edge for clearance */
+        padding-left: 30px; /* <--- Adjust left padding for clean alignment */
+        align-items: flex-start; /* Ensures all text is left-aligned */
+        box-shadow: 2px 0 10px rgba(0,0,0,0.5); /* Adds a subtle shadow for depth */
+        /* --- END OF KEY EDITS --- */
+
         height: 100vh;
         background-color: var(--bg-dark);
         transition: 0.3s;
         z-index: 1000;
     }
-    .nav-menu.active { left: 0; }
-    .nav-item { margin: 16px 0; }
-    .hamburger.active .bar:nth-child(2) { opacity: 0; }
-    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-    .lang-switcher-mobile {
-        display: list-item;
-        margin-top: 30px;
-        padding-top: 20px;
-        border-top: 1px solid #333;
+
+    .nav-menu.active {
+        left: 0; /* Slides the menu into view */
     }
-    .lang-switcher-mobile button { font-size: 1.4rem; }
-    .hero-content h1 { font-size: 2.5rem; }
-    .contact-container { flex-direction: column; }
-}
+    
+    /* --- STYLING THE INDIVIDUAL ITEMS --- */
+    .nav-menu .nav-item {
+        margin-bottom: 20px; /* Space between menu links */
+        list-style: none; /* Removes any default bullet points */
+        width: 100%;
+    }
+
+    .nav-menu .nav-link,
+    .nav-menu .nav-link-button {
+        font-size: 1.2rem; /* Make text larger and easier to tap */
+        color: var(--text-light); /* Ensures text is visible */
+        padding: 5px 0;
+        display: block; /* Makes the entire horizontal space clickable */
+    }
+    
+    /* Revert the Login button style to look like a link inside the menu */
+    .nav-menu .nav-link-button {
+        border: none;
+        background: none;
+        color: var(--text-light);
+    }
+    /* --- END OF MOBILE ITEM STYLING --- */
+
+} /* <-- This closes the @media (max-width: 768px) block for LTR */
 
 /* RTL Styles */
-body[dir="rtl"] { font-family: var(--font-family-ar); text-align: right; }
-body[dir="rtl"] .cta-button .fa-arrow-right { transform: scaleX(-1); margin-left: 0; margin-right: 8px; }
+body[dir="rtl"] { 
+    font-family: var(--font-family-ar); 
+    text-align: right; 
+}
+body[dir="rtl"] .cta-button .fa-arrow-right { 
+    transform: scaleX(-1); 
+    margin-left: 0; 
+    margin-right: 8px; 
+}
 
 @media (max-width: 768px) {
-    body[dir="rtl"] .nav-menu { left: initial; right: -100%; }
-    body[dir="rtl"] .nav-menu.active { left: initial; right: 0; }
-    body[dir="rtl"] .mission-items-container { flex-direction: column; }
+    /* This rule specifically handles the slide-in direction for Arabic/RTL */
+    body[dir="rtl"] .nav-menu { 
+        left: initial; 
+        right: -100%; /* Hide menu off-screen to the right */
+        align-items: flex-end; /* Align text to the right side of the panel */
+        padding-left: 0; 
+        padding-right: 30px; /* Adjust padding for RTL */
+    }
+    body[dir="rtl"] .nav-menu.active { 
+        left: initial; 
+        right: 0; /* Slides the menu in from the right */
+    }
+    body[dir="rtl"] .mission-items-container { 
+        flex-direction: column; 
+    }
 }
