@@ -49,6 +49,7 @@ section, footer {
     align-items: center;
     padding: 20px 5%;
     height: 70px;
+    direction: ltr;
 }
 .nav-logo {
     font-size: 2rem; /* Style your logo text */
@@ -57,6 +58,7 @@ section, footer {
     text-decoration: none;
     z-index: 1001; /* Make sure logo is on top */
 }
+
 
 /* --- DESKTOP NAVIGATION --- */
 .navbar-right {
@@ -70,6 +72,23 @@ section, footer {
     align-items: center;
     gap: 30px; /* This creates the space between your logo and nav links */
 }
+
+/* --- NEW: Arabic Logo on Desktop --- */
+.nav-logo-ar {
+    font-size: 2rem; /* Match .nav-logo */
+    font-weight: 700; /* Match .nav-logo */
+    color: var(--primary-yellow); /* Match .nav-logo */
+    font-family: var(--font-family-ar); /* Force Arabic font */
+    display: none; /* Hide by default */
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Show the logo only when it has text content (i.e., in Arabic mode) */
+.nav-logo-ar:not(:empty) {
+    display: block;
+}
+
+/* --- END OF NEW STYLES --- */
 
 .nav-menu {
     display: flex;
@@ -212,18 +231,30 @@ section, footer {
   display: none;          /* hidden on desktop by default */
 }
 
-/* show dropdown near logo on desktop when active */
+/* show dropdown on desktop when active */
 .nav-menu.active {
   display: block;
   position: absolute;
-  top: 70px;              /* just below the fixed header */
-  left: 20px;             /* aligns near the logo */
+
+  /* === THIS IS THE FIX === */
+  top: 75px;  /* Was 70px. This adds a 5px gap. */
+  /* ======================= */
+
+  left: auto;             
+  right: 80%;              
   background-color: rgba(18,18,18,0.98);
   padding: 12px 16px;
   border-radius: 10px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.6);
   min-width: 180px;
   z-index: 1001;
+}
+
+/* === ADD THIS FOR ARABIC (RTL) DESKTOP === */
+/* This rule must be OUTSIDE any @media query */
+body[dir="rtl"] .nav-menu.active {
+    right: auto;  
+    left: 5%;     
 }
 
 /* dropdown list styles */
@@ -255,6 +286,13 @@ section, footer {
   .nav-menu.active { left: 0; right: initial; } /* your CSS already had this */
 }
 
+
+/* On mobile, hide this new desktop logo */
+@media (max-width: 768px) {
+    .nav-logo-ar {
+        display: none;
+    }
+}
 
 /* --- Hero, Mission, Cards, etc. --- */
 .hero { height: 100vh; padding: 0; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }

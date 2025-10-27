@@ -135,7 +135,8 @@ const translations = {
     "internFormSubmitBtn": "Submit Internship Application",
     "socialWhatsapp": "Join us on WhatsApp",
     "socialInstagram": "Follow us on Instagram",
-    "socialTiktok": "Follow us on TikTok"
+    "socialTiktok": "Follow us on TikTok",
+    "navLogoAr": ""
   },
 "ar": {
     // --- Existing Translations ---
@@ -271,7 +272,8 @@ const translations = {
     "internFormSubmitBtn": "إرسال طلب التدريب",
     "socialWhatsapp": "انضم إلينا على واتساب",
     "socialInstagram": "تابعنا على إنستجرام",
-    "socialTiktok": "تابعنا على تيك توك"
+    "socialTiktok": "تابعنا على تيك توك",
+    "navLogoAr": "ai . شباب"
   }
 };
 
