@@ -81,6 +81,7 @@ section, footer {
     font-family: var(--font-family-ar); /* Force Arabic font */
     display: none; /* Hide by default */
     white-space: nowrap; /* Prevent wrapping */
+    font-family: var(--font-family-en);
 }
 
 /* Show the logo only when it has text content (i.e., in Arabic mode) */
@@ -231,24 +232,26 @@ section, footer {
   display: none;          /* hidden on desktop by default */
 }
 
-/* show dropdown on desktop when active */
-.nav-menu.active {
-  display: block;
-  position: absolute;
-
-  /* === THIS IS THE FIX === */
-  top: 75px;  /* Was 70px. This adds a 5px gap. */
-  /* ======================= */
-
-  left: auto;             
-  right: 80%;              
-  background-color: rgba(18,18,18,0.98);
-  padding: 12px 16px;
-  border-radius: 10px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-  min-width: 180px;
-  z-index: 1001;
+/* * This is the rule I fixed in the previous step
+ * It makes the DESKTOP dropdown work
+ */
+@media (min-width: 769px) {
+    /* show dropdown on desktop when active */
+    .nav-menu.active {
+      display: block;
+      position: absolute;
+      top: 75px;
+      left: auto;             
+      right: 80%;              
+      background-color: rgba(18,18,18,0.98);
+      padding: 12px 16px;
+      border-radius: 10px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+      min-width: 180px;
+      z-index: 1001;
+    }
 }
+
 
 /* === ADD THIS FOR ARABIC (RTL) DESKTOP === */
 /* This rule must be OUTSIDE any @media query */
@@ -377,38 +380,51 @@ p { color: var(--text-secondary); line-height: 1.6; }
     .mission-items-container { flex-direction: column; }
 }
 
+/*
+ * =================================================================
+ * === 💡 ALL MY EDITS ARE IN THIS SECTION (max-width: 768px) ===
+ * =================================================================
+ */
 @media (max-width: 768px) {
     /* Hamburger and desktop controls visibility */
     .desktop-controls { display: none; }
     .hamburger { display: block; }
 
-    /* Hamburger animation styles (keeping your existing ones) */
+    /* --- I REMOVED THE "X" ANIMATION in the previous step --- */
+    /*
     .hamburger.active .bar:nth-child(2) { opacity: 0; }
     .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    */
+
 
     /* --- MOBILE NAV MENU STYLING (The Burger Menu Panel) --- */
     .nav-menu {
         position: fixed;
         left: -100%; /* Hides the menu off-screen to the left */
-        top: 0;
+        
+        /* === 💡 EDITED: Made menu "shorter" === */
+        top: 70px; /* Starts below the 70px header */
+        height: auto; /* REMOVED 100vh, now height is based on content */
+        
         gap: 0;
         flex-direction: column;
-        
-        /* --- KEY EDITS FOR PHOTO MATCHING --- */
-        justify-content: flex-start; /* Aligns menu items to the top, not the center */
+        justify-content: flex-start; 
         width: 100%;
-        max-width: 250px; /* <--- Sets the fixed width of the side panel */
-        padding-top: 80px; /* <--- Pushes content down from the top edge for clearance */
-        padding-left: 30px; /* <--- Adjust left padding for clean alignment */
-        align-items: flex-start; /* Ensures all text is left-aligned */
-        box-shadow: 2px 0 10px rgba(0,0,0,0.5); /* Adds a subtle shadow for depth */
-        /* --- END OF KEY EDITS --- */
+        max-width: 220px; /* Kept this from last fix */
 
-        height: 100vh;
+        /* REPLACED padding-top and padding-left */
+        padding: 20px 0 20px 30px; 
+        
+        align-items: flex-start;
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.5); /* Adjusted shadow */
         background-color: var(--bg-dark);
         transition: 0.3s;
         z-index: 1000;
+
+        /* ADDED a nice curve to the corner */
+        border-bottom-right-radius: 10px;
+        /* === END OF EDIT === */
     }
 
     .nav-menu.active {
@@ -417,20 +433,19 @@ p { color: var(--text-secondary); line-height: 1.6; }
     
     /* --- STYLING THE INDIVIDUAL ITEMS --- */
     .nav-menu .nav-item {
-        margin-bottom: 20px; /* Space between menu links */
-        list-style: none; /* Removes any default bullet points */
+        margin-bottom: 20px; 
+        list-style: none; 
         width: 100%;
     }
 
     .nav-menu .nav-link,
     .nav-menu .nav-link-button {
-        font-size: 1.2rem; /* Make text larger and easier to tap */
-        color: var(--text-light); /* Ensures text is visible */
+        font-size: 1.2rem; 
+        color: var(--text-light); 
         padding: 5px 0;
-        display: block; /* Makes the entire horizontal space clickable */
+        display: block;
     }
     
-    /* Revert the Login button style to look like a link inside the menu */
     .nav-menu .nav-link-button {
         border: none;
         background: none;
@@ -438,11 +453,60 @@ p { color: var(--text-secondary); line-height: 1.6; }
     }
     /* --- END OF MOBILE ITEM STYLING --- */
 
+
+    /* --- STYLES FOR MOBILE LANGUAGE SWITCHER (from previous fix) --- */
+    .lang-switcher-mobile {
+        display: block; /* Makes it visible */
+        margin-top: 20px; /* Adds space above it */
+        padding-top: 20px; /* Adds space */
+        border-top: 1px solid var(--bg-secondary); /* Adds a separator line */
+    }
+    
+    .lang-switcher-mobile button {
+        font-size: 1.2rem; /* Match other nav links */
+        font-weight: 600; /* Match other nav links */
+        padding: 5px 0;
+        width: 100%;
+        justify-content: flex-start; /* Aligns icon and text to the left */
+        gap: 10px; /* Adds space between icon and text */
+        color: var(--text-secondary); /* Make it slightly less prominent */
+    }
+
+    .lang-switcher-mobile button:hover {
+        color: var(--primary-yellow); /* Hover effect */
+    }
+    /* --- END OF LANGUAGE SWITCHER STYLES --- */
+    
+
+    /* * --- This is the fix from our previous conversation ---
+     * It makes your hero content fit on small mobile screens.
+     */
+    .hero-content h1 {
+        font-size: 2.25rem; /* Smaller font for mobile */
+        margin-bottom: 25px;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 35px;
+    }
+
+    .cta-button {
+        padding: 12px 24px; /* Smaller buttons for mobile */
+        font-size: 0.9rem;
+    }
+
+    .hero-buttons-container {
+        gap: 15px; /* Smaller gap between buttons */
+    }
+    /* --- End of previous fix --- */
+
+
 } /* <-- This closes the @media (max-width: 768px) block for LTR */
 
 /* RTL Styles */
 body[dir="rtl"] { 
-    font-family: var(--font-family-ar); 
+   font-family: var(--font-family-en);  
     text-align: right; 
 }
 body[dir="rtl"] .cta-button .fa-arrow-right { 
@@ -459,11 +523,23 @@ body[dir="rtl"] .cta-button .fa-arrow-right {
         align-items: flex-end; /* Align text to the right side of the panel */
         padding-left: 0; 
         padding-right: 30px; /* Adjust padding for RTL */
+        
+        /* === 💡 EDITED: RTL version for "shorter" menu === */
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 10px;
+        /* === END OF RTL EDIT === */
     }
     body[dir="rtl"] .nav-menu.active { 
         left: initial; 
         right: 0; /* Slides the menu in from the right */
     }
+
+    /* --- RTL Version for language switcher --- */
+    body[dir="rtl"] .lang-switcher-mobile button {
+        justify-content: flex-end; /* Aligns icon and text to the right */
+    }
+    /* --- END OF RTL fix --- */
+
     body[dir="rtl"] .mission-items-container { 
         flex-direction: column; 
     }

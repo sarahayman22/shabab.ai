@@ -1,11 +1,10 @@
-
 const translations = {
 "en": {
     // --- Existing Translations ---
     "docTitle": "Shabab.ai - Youth Empowerment Hub",
     "navHome": "Home",
     "navAbout": "About",
-    "navContact": "Contact",
+    "navContactUs": "Contact Us", // UPDATED from navContact
     "navLogin": "Login", 
     "heroTitle1": "Unlocking youth potential through <span class='highlight-yellow'> AI, creativity, and mentorship.</span>",
     "heroSubtitle1": "Your community. Your future. Your journey.",
@@ -136,14 +135,24 @@ const translations = {
     "socialWhatsapp": "Join us on WhatsApp",
     "socialInstagram": "Follow us on Instagram",
     "socialTiktok": "Follow us on TikTok",
-    "navLogoAr": ""
+
+    // --- NEW: Contact Form Translations ---
+    "contactFormDocTitle": "Contact Us - Shabab.ai",
+    "contactFormTitle": "Contact Us",
+    "contactFormSubtitle": "We'd love to hear from you. Fill out the form below and we'll get in touch.",
+    "contactFormFullName": "Full Name",
+    "contactFormEmail": "Email Address",
+    "contactFormPhone": "Phone Number",
+    "contactFormMessage": "Your Message",
+    "contactFormMessagePlaceholder": "Write your message here...",
+    "contactFormSubmitBtn": "Send Message"
   },
 "ar": {
     // --- Existing Translations ---
     "docTitle": "شباب.ai - مركز تمكين الشباب",
     "navHome": "الرئيسية",
     "navAbout": "حولنا",
-    "navContact": "تواصل معنا",
+    "navContactUs": "تواصل معنا", // UPDATED from navContact
     "navLogin": "تسجيل الدخول",
     "heroTitle1": "إطلاق إمكانات الشباب من خلال <span class='highlight-yellow'>الذكاء الاصطناعي والإبداع والإرشاد.</span>",
     "heroSubtitle1": "مجتمعك. مستقبلك. رحلتك.",
@@ -168,7 +177,7 @@ const translations = {
     "card2Text": "تشجيع طرق التفكير الجديدة لحل مشاكل الحياة الواقعية.",
     "card3Title": "الإرشاد",
     "card3Text": "ربط الشباب بالموجهين الذين يلهمون ويرشدون.",
-    "whatWeOfferTitle": "ماذا نقدم",
+    "whatWeDoTitle": "ماذا نقدم",
     "whatWeOfferSubtitle": "في شباب.ai، نقدم نظامًا بيئيًا لدعم الشباب في كل مرحلة من رحلتهم.",
     "offer1Title": "التواصل والانتشار",
     "offer1Text": "تواصل مع الأقران، الموجهين، المستثمرين، الشركات، والقادة المؤثرين — واحصل على فرص حقيقية.",
@@ -273,16 +282,37 @@ const translations = {
     "socialWhatsapp": "انضم إلينا على واتساب",
     "socialInstagram": "تابعنا على إنستجرام",
     "socialTiktok": "تابعنا على تيك توك",
-    "navLogoAr": "ai . شباب"
+
+    // --- NEW: Contact Form Translations ---
+    "contactFormDocTitle": "تواصل معنا - شباب.ai",
+    "contactFormTitle": "تواصل معنا",
+    "contactFormSubtitle": "يسعدنا أن نسمع منك. املأ النموذج أدناه وسنتواصل معك.",
+    "contactFormFullName": "الاسم الكامل",
+    "contactFormEmail": "البريد الإلكتروني",
+    "contactFormPhone": "رقم الهاتف",
+    "contactFormMessage": "رسالتك",
+    "contactFormMessagePlaceholder": "اكتب رسالتك هنا...",
+    "contactFormSubmitBtn": "إرسال الرسالة"
   }
 };
 
 document.addEventListener("DOMContentLoaded", function() {
+    // Check for language in URL query parameters
     const urlParams = new URLSearchParams(window.location.search);
     const langFromUrl = urlParams.get('lang');
+    
+    // Check local storage for saved language
+    let savedLang = localStorage.getItem('shababLang');
+
     if (langFromUrl) {
         currentLang = langFromUrl;
+        localStorage.setItem('shababLang', langFromUrl); // Save lang from URL
+    } else if (savedLang) {
+        currentLang = savedLang; // Use saved lang
+    } else {
+        currentLang = 'en'; // Default
     }
+
 
     // Check if slideshow elements exist before running slideshow logic
     if (document.getElementsByClassName("slide").length > 0) {
@@ -358,11 +388,15 @@ const mentorLink = document.querySelector('a[href*="become-a-mentor/form.html"]'
 const internLink = document.querySelector('a[href*="become-an-intern/form.html"]');
 const backLink = document.querySelector('a.back-link[href*="index.html"]');
 const loginLink = document.querySelector('a[href="login.html"]');
+// NEW: Add the contact link
+const contactLink = document.querySelector('a[href*="contact-us/form.html"]');
 // ==============================
 
-let currentLang = 'en';
+let currentLang = 'en'; // Default language
 
 function translatePage() {
+    // Save the current language to local storage
+    localStorage.setItem('shababLang', currentLang);
     updateContent();
 }
 
@@ -387,7 +421,7 @@ function updateContent() {
                 }
             
             /* This is critical for making the <span> tags work */
-            } else if (el.tagName === 'H1' || el.tagName === 'P') { 
+            } else if (el.tagName === 'H1' || el.tagName === 'P' || el.tagName === 'H2' || el.tagName === 'H3') { 
                 el.innerHTML = translations[currentLang][key];
             
             } else {
@@ -416,7 +450,10 @@ function updateContent() {
     if(mentorLink) mentorLink.href = `./become-a-mentor/form.html${langParam}`;
     if(internLink) internLink.href = `./become-an-intern/form.html${langParam}`;
     if(loginLink) loginLink.href = `login.html${langParam}`;
+    // NEW: Update the contact link href
+    if(contactLink) contactLink.href = `./contact-us/form.html${langParam}`;
 
+    // Update the back link
     if(backLink) backLink.href = `../index.html${langParam}`;
 }
 

@@ -50,16 +50,23 @@
           <span id="lang-text-desktop">العربية</span>
         </button>
       </div>
-         <!-- <a href="login.html" class="nav-link-button" data-lang="navLogin">Login</a> -->
+          <a href="#home" class="nav-logo logo-ar">ai . شباب</a>
+      <!-- <a href="login.html" class="nav-link-button" data-lang="navLogin">Login</a> -->
     </div>
 
-    <!-- Mobile / drawer menu (uses class .nav-menu so JS works) -->
-    <div class="nav-menu" id="mobileMenu" aria-hidden="true">
+<div class="nav-menu" id="mobileMenu" aria-hidden="true">
       <ul>
-        <li class="nav-item"><a href="#home" class="nav-link" data-section="home">Home</a></li>
-        <li class="nav-item"><a href="#about" class="nav-link" data-section="about">About</a></li>
-        <li class="nav-item"><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
-      </ul>
+       <li class="nav-item"><a href="#home" class="nav-link" data-section="home" data-lang="navHome">Home</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link" data-section="about" data-lang="navAbout">About</a></li>
+        <li class="nav-item"><a href="./contact-us/form.html" class="nav-link" data-section="contact" data-lang="navContactUs">Contact Us</a></li>
+        
+        <li class="nav-item lang-switcher-mobile">
+            <button id="lang-toggle-mobile">
+                <i class="fas fa-globe"></i>
+                <span id="lang-text-mobile">AR</span>
+            </button>
+        </li>
+        </ul>
     </div>
   </nav>
 </header>

@@ -1,0 +1,190 @@
+/* --- Global Styles & Variables (Copied for form-specific use) --- */
+:root {
+    --bg-dark: #121212;
+    --bg-secondary: #1E1E1E;
+    --primary-yellow: #EAB308;
+    --text-light: #E5E7EB;
+    --text-secondary: #9CA3AF;
+    --font-family-en: 'Poppins', sans-serif;
+    --font-family-ar: 'Cairo', sans-serif;
+}
+
+/* --- NEW: Added base body styles --- */
+body {
+    font-family: var(--font-family-en);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    margin: 0;
+    padding: 0;
+}
+
+/* --- NEW: Added base subtitle style --- */
+.subtitle {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* --- NEW: Added .cta-button styles --- */
+.cta-button {
+    background-color: var(--primary-yellow);
+    color: var(--bg-dark);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+}
+/* --- End of new styles --- */
+
+
+/* --- Form Page Styles --- */
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--bg-dark);
+    border-bottom: 1px solid var(--bg-secondary);
+}
+
+.back-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--primary-yellow);
+}
+
+.back-link i {
+    margin-right: 8px;
+}
+
+.form-page-container {
+    padding: 40px 5%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-container {
+    background-color: var(--bg-secondary);
+    padding: 40px;
+    border-radius: 12px;
+}
+
+.form-container h1 {
+    text-align: center;
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+}
+
+.form-section {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-light);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--text-secondary);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-yellow);
+    box-shadow: 0 0 0 2px rgba(234, 179, 8, 0.3);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-submit-btn {
+    width: 100%;
+    margin-top: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: none;
+}
+/* --- END: Form Page Styles --- */
+
+
+/* --- Responsive Form Styles --- */
+@media (max-width: 768px) {
+    /* Show mobile lang switcher on form pages */
+    .form-header .lang-switcher-mobile {
+        display: block;
+    }
+    .form-container {
+        padding: 20px;
+    }
+    .form-container h1 {
+        font-size: 1.8rem;
+    }
+} /* <-- This closes the @media (max-width: 768px) block for LTR */
+
+
+/* --- RTL Form Styles --- */
+body[dir="rtl"] .back-link i {
+    transform: scaleX(-1);
+    margin-right: 0;
+    margin-left: 8px;
+}
+
+/* --- NEW: Added RTL body style --- */
+body[dir="rtl"] {
+    font-family: var(--font-family-ar);
+    text-align: right;
+}
+
+body[dir="rtl"] .form-group label {
+    text-align: right;
+}
+/* --- END RTL Form Styles --- */
+
+
+@media (max-width: 768px) {
+    /* --- RTL Form Header --- */
+    body[dir="rtl"] .form-header {
+        flex-direction: row-reverse;
+    }
+    body[dir="rtl"] .back-link {
+        text-align: right;
+    }
+    /* --- END NEW --- */
+}
+

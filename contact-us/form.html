@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title for the new form page -->
+    <title data-lang="contactFormDocTitle">Contact Us - Shabab.ai</title>
+    <!-- Link to the main stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Simplified header for the form page -->
+    <header class="form-header">
+        <a href="../index.html" class="back-link" data-lang="formBackLink">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+        <div class="lang-switcher-mobile">
+            <button id="lang-toggle-mobile">
+                <i class="fas fa-globe"></i>
+                <!-- <span id="lang-text-mobile">AR</span> -->
+            </button>
+        </div>
+    </header>
+
+    <main class="form-page-container">
+        <div class="form-container">
+            <h1 data-lang="contactFormTitle">Contact Us</h1>
+            <p class="subtitle" data-lang="contactFormSubtitle">
+                We'd love to hear from you. Fill out the form below and we'll get in touch.
+            </p>
+
+            <!-- The new contact form -->
+            <form action="#" method="POST">
+                <div class="form-section">
+                    <div class="form-group">
+                        <label for="full-name" data-lang="contactFormFullName">Full Name</label>
+                        <input type="text" id="full-name" name="full-name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" data-lang="contactFormEmail">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" data-lang="contactFormPhone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" data-lang="contactFormMessage">Your Message</label>
+                        <textarea id="message" name="message" rows="6" data-lang="contactFormMessagePlaceholder" placeholder="Write your message here..."></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="cta-button form-submit-btn" data-lang="contactFormSubmitBtn">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </main>
+    
+    <!-- Link to the main script file -->
+    <script src="../script.js"></script>
+</body>
+</html>
